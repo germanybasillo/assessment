@@ -41,6 +41,11 @@ Route::get('/apply', function () {
     return Inertia::render('Assessments/Apply');
 })->middleware(['auth', 'verified'])->name('apply');
 
+Route::middleware(['auth','verified'])->group(function () {
+    Route::post('/assessments/store', [AssessmentController::class, 'store'])->name('assessments.store');
+    Route::put('/assessments/{assessment}', [AssessmentController::class, 'update'])->name('assessments.update');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

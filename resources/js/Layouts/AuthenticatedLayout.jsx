@@ -21,19 +21,19 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink href={route('dashboard')} active={route().current('dashboard')} className="text-blue-500 hover:text-blue-800">
                                     Dashboard
                                 </NavLink>
 
-                                <NavLink href={route('request')} active={route().current('request')}>
-                                    Request Assessment
-                                </NavLink>
-
-                                <NavLink href={route('approve')} active={route().current('approve')}>
+                                <NavLink href={route('approve')} active={route().current('approve')} className="text-blue-500 hover:text-blue-800">
                                     Approve Assessment
                                 </NavLink>
 
-                                <NavLink href={route('apply')} active={route().current('apply')}>
+                                <NavLink href={route('request')} active={route().current('request')} className="text-blue-500 hover:text-blue-800">
+                                    Request Assessment
+                                </NavLink>
+
+                                <NavLink href={route('apply')} active={route().current('apply')} className="text-blue-500 hover:text-blue-800">
                                     Apply Assessment
                                 </NavLink>
                             </div>
